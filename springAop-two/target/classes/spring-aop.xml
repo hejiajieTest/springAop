@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="customerService" class="cn.ffcs.msa.springAop.two.CustomerService">
+		<property name="name" value="Yiibai Mook Kim" />
+		<property name="url" value="http://www.yiibai.com" />
+	</bean>
+
+	<bean id="aopBeforeMethod" class="cn.ffcs.msa.springAop.two.AopBeforeMethod" />
+	<bean id="aopAfterMethod" class="cn.ffcs.msa.springAop.two.AopAfterMethod" />
+    <bean id="aopBeforeMethod2" class="cn.ffcs.msa.springAop.two.AopBeforeMethod2" />
+    <bean id="aopAfterMethod2" class="cn.ffcs.msa.springAop.two.AopAfterMethod2" />
+    <bean id="hijackThrowException" class="cn.ffcs.msa.springAop.two.HijackThrowException" />
+	<bean id="serviceProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="customerService" />
+		<property name="interceptorNames">
+			<list>
+				<value>aopBeforeMethod</value>
+				<value>aopBeforeMethod2</value>
+				<value>aopAfterMethod2</value>
+				<value>aopAfterMethod</value>
+				<value>hijackThrowException</value>
+			</list>
+		</property>
+	</bean>
+</beans>
