@@ -34,4 +34,65 @@
    	 	<version>1.9.2</version>
 	</dependency>
   </dependencies>
+  <!-- 项目打成可以运行的jar包 ,由于含有resource底下的文件，本次打包失败,后面在修改，打包时添加resource底下的文件，
+	        然后报错，to locate Spring NamespaceHandler for XML schema namespace，网上说是spring打包时，引入多个spring的依赖，
+       spring.handlers，spring.schemas文件会覆盖，只保留最后添加的spring依赖，具体的不懂，但是打开这两个文件确实少了很多spring的一些namespace的声明
+                   解决办法：
+             <transformer  
+                  implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">  
+                  <resource>META-INF/spring.handlers</resource>  
+              </transformer>  
+              <transformer  
+                  implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">  
+                  <resource>META-INF/spring.schemas</resource>  
+              </transformer>
+  -->
+  <build>
+    <finalName>test</finalName>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <scriptSourceDirectory>src/main/resource</scriptSourceDirectory>
+    <resources>
+	   <resource>
+		    <directory>src/main/resource</directory>
+		    <includes>
+		    	<include>spring-aop3.xml</include>
+		    </includes>
+<!--  	    <excludes>
+			    <exclude>application.properties</exclude>
+			    <exclude>bootstrap.properties</exclude>
+		     	<exclude>logback.xml</exclude>
+		    </excludes> -->
+	    </resource>
+    </resources>
+    <plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-shade-plugin</artifactId>
+  			<version>1.7.1</version>
+  			<executions>
+  				<execution>
+  					<phase>package</phase>
+  					<goals>
+  						<goal>shade</goal>
+  					</goals>
+  					<configuration>
+  						<transformers>
+		  					<transformer  
+		                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">  
+		                        <resource>META-INF/spring.handlers</resource>  
+		                    </transformer>  
+		                    <transformer  
+		                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">  
+		                        <resource>META-INF/spring.schemas</resource>  
+		                    </transformer>
+  							<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+  								<mainClass>cn.ffcs.msa.springAop.five.Application</mainClass>
+  							</transformer>
+  						</transformers>
+  					</configuration>
+  				</execution>
+  			</executions>
+  		</plugin>
+  	</plugins> 
+  </build>
 </project>
