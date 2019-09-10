@@ -14,6 +14,7 @@
 
 <aop:config>
 <aop:pointcut id="aopPointcut" expression="execution(* cn.ffcs.msa.springAop.four.aop..*.*(..))"/>
+<!-- 切面定义 -->
 <aop:aspect ref="aopAspectHelper">
 <!--前置通知-->
 <aop:before method="aopBefore" pointcut-ref="aopPointcut"/>

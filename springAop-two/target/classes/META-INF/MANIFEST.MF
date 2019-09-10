@@ -1,5 +1,12 @@
 Manifest-Version: 1.0
 Built-By: Lenovo
+Class-Path: . lib/springAop-common-1.0.0-SNAPSHOT.jar lib/spring-conte
+ xt-4.3.16.RELEASE.jar lib/spring-aop-4.3.16.RELEASE.jar lib/spring-co
+ re-4.3.16.RELEASE.jar lib/commons-logging-1.2.jar lib/spring-expressi
+ on-4.3.16.RELEASE.jar lib/spring-aspects-4.3.16.RELEASE.jar lib/aspec
+ tjweaver-1.8.9.jar lib/spring-beans-4.3.16.RELEASE.jar lib/spring-web
+ -4.3.16.RELEASE.jar
 Build-Jdk: 1.8.0_91
 Created-By: Maven Integration for Eclipse
+Main-Class: cn.ffcs.msa.springAop.two.App
 

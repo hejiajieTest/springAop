@@ -60,5 +60,6 @@
   	<module>springAop-three</module>
     <module>springAop-four</module>
     <module>springAop-five</module>
+    <module>springAop-six</module>
   </modules>
 </project>

@@ -13,15 +13,6 @@
   <url>http://maven.apache.org</url>
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
-    <scriptSourceDirectory>src/main/resource</scriptSourceDirectory>
-    <resources>
-      <resource>
-        <directory>src/main/resource</directory>
-        <includes>
-          <include>spring-aop3.xml</include>
-        </includes>
-      </resource>
-    </resources>
     <finalName>test</finalName>
     <plugins>
       <plugin>

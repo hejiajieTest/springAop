@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="cn.ffcs.msa.springAop.two.AppTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="cn.ffcs.msa.springAop.two.AppTest" time="0.002" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="D:\jdk1.8.0_91\jre\bin"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\sts_data\springAop"/>
+    <property name="user.dir" value="D:\sts_data\springAop\springAop-two"/>
     <property name="java.runtime.version" value="1.8.0_91-b15"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="D:\jdk1.8.0_91\jre\lib\endorsed"/>
@@ -63,5 +63,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="cn.ffcs.msa.springAop.two.AppTest" name="testApp" time="0.001"/>
+  <testcase classname="cn.ffcs.msa.springAop.two.AppTest" name="testApp" time="0.002"/>
 </testsuite>

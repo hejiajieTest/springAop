@@ -15,7 +15,7 @@
 	<aop:config>
 			<aop:pointcut id="pointCut"
 				expression="execution(* cn.ffcs.msa.springAop.five..*.*(..))" />
-		<aop:aspect id="aspectLoggging" ref="logAspect" >
+		<aop:aspect id="aspectLoggging" ref="logAspect" />
 
 			<!-- @Before -->
 			<aop:before method="logBefore" pointcut-ref="pointCut" />
