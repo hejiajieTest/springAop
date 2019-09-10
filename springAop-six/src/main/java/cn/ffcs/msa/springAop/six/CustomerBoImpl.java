@@ -1,5 +1,8 @@
 package cn.ffcs.msa.springAop.six;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class CustomerBoImpl implements CustomerBo {
 
 	public void addCustomer(){
